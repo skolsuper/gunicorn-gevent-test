@@ -1,0 +1,13 @@
+name: gunicorn-test
+
+services:
+  fake-openai:
+    build: ./fake-openai
+  sync-gunicorn:
+    build: ./sync-gunicorn
+    ports:
+      - 8000:8000
+  gevent-gunicorn:
+    build: ./gevent-gunicorn
+    ports:
+      - 8001:8000
